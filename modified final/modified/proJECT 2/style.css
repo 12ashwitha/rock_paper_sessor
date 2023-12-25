@@ -1,0 +1,155 @@
+/* Import Google font - Poppins */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+
+* {    /* iniversal tag whhich select all the html tags*/
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /*padding ,border all together*/
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  height: 100vh; /* veiwpoint height*/
+  display: flex; 
+  align-items: center;
+  justify-content: center;
+  background-image: url("https://cutewallpaper.org/27/background-wallpaper-gaming/gaming-pc-wallpaper-hd-wallpapers-for-tech-computer-wallpaper.png");
+}
+
+
+.container {
+  padding: 2rem 7rem;/* 1 rem= 16px*/
+  border-radius: 14px;
+  background-image: url("https://cutewallpaper.org/27/background-wallpaper-gaming/gaming-pc-wallpaper-hd-wallpapers-for-tech-computer-wallpaper.png");
+}
+
+.result_images {
+  display: flex;
+  column-gap: 7rem;
+}
+
+.cpu_result .user_result {
+  transform-origin: left; /*shaking is take part from left side*/
+
+}
+
+@keyframes cpuShake {
+  0%{
+    transform: rotate(10deg);
+  }
+  50%{
+    transform: rotate(5deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+#cpu_result1{
+  animation: cpuShake 0.7s ease infinite;
+  animation-play-state: paused;/* intial state of animation */
+  rotate:270deg;
+}
+
+@keyframes userShake {
+  0%{
+    transform: rotate(95deg);
+  }
+  50% {
+    transform: rotate(100deg);
+  }
+}
+
+#user_result1{
+  animation: userShake 0.7s ease infinite ;
+  animation-play-state: paused;
+}
+
+.container.cpu_result {
+  transform-origin: right;
+  animation: cpuShake 0.7s ease infinite;
+}
+
+
+.result_images img {
+  width: 100px;
+}
+
+.user_result img {
+  transform: rotate(90deg);
+}
+
+.cpu_result img {
+  transform: rotate(-90deg) rotateY(180deg);/*270*/
+}
+
+.result {
+  text-align: center;
+  font-size: 2rem;
+  /* color: #efebf5; */
+  margin-top: 1.5rem;
+  margin-left: 30px;
+}
+
+.option_image img {
+  width: 50px;
+}
+
+.option_images {
+  display: flex;
+  align-items: center;
+  margin-top: 2.5rem;
+  justify-content: space-between;
+}
+
+.container.option_images {
+  pointer-events: none;
+}
+
+.option_image {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  opacity: 0.5;
+  cursor: pointer; /* cursor pointer changes to hand */
+  transition: opacity 0.3s ease;
+}
+
+.option_image:hover {
+  opacity: 1;
+}
+
+.option_image.active {
+  opacity: 1;
+}
+
+.option_image img {
+  pointer-events: none;
+}
+
+.option_image p{
+  color: #ebe5f3;
+  font-size: 1.235rem;
+  margin-top: 1rem;
+  pointer-events: none;
+}
+
+@keyframes colorChange {
+  0% { color: rgb(234, 238, 130); }
+  16.666% { color: indigo; }
+  33.333% { color: blue; }
+  50% { color: green; }
+  66.666% { color: yellow; }
+  83.333% { color: orange; }
+  100% { color: red; }
+}
+
+.result {
+  animation: colorChange 1s infinite; /* 6 colors with 1s for each color */
+  font-size: 24px; /* Adjust the font size as needed */
+  /* display: inline-block; Ensures the animation works */
+  margin-right: 50px;
+  font-size: 50px;
+  
+}
+
